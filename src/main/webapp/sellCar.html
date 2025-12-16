@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng bán xe</title>
+   <link rel="stylesheet" href="css/sellCar.css"/>
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="logo">Car Store</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="buyCar.jsp">Mua Xe</a></li>
+        <li><a href="sellCar.html">Đăng Bán</a></li>
+        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+        <li><a href="news.html">Tin Tức</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <button class="btn">Tìm xe</button>
+      <button class="btn">Hà Nội</button>
+    </div>
+  </div>
+</header>
+
+  <h2>Đăng bán xe</h2>
+  <form action="SellCarServlet" method="post" enctype="multipart/form-data">
+    <label>Mã xe:</label>
+    <input type="text" name="id" required>
+
+    <label>Thương hiệu:</label>
+    <input type="text" name="brand" required>
+
+    <label>Mẫu xe:</label>
+    <input type="text" name="model" required>
+
+    <label>Năm sản xuất:</label>
+    <input type="number" name="year" required>
+
+    <label>Số km đã đi:</label>
+    <input type="number" name="km" required>
+
+    <label>Giá bán:</label>
+    <input type="number" name="price" required>
+
+    <label>Vị trí đăng bán:</label>
+    <input type="text" name="location" required>
+
+    <label>Mô tả xe:</label>
+    <textarea name="description"></textarea>
+
+    <label>Hình ảnh xe:</label>
+    <input type="file" name="image" accept="image/*" required>
+
+    <button type="submit">Lưu</button>
+  </form>
+</body>
+</html>
