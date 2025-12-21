@@ -2,8 +2,13 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Đăng bán xe</title>
-   <link rel="stylesheet" href="css/sellCar.css"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Đăng bán xe - Car Store</title>
+  <link rel="stylesheet" href="css/sellCar.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
 <header>
@@ -12,7 +17,7 @@
     <nav>
       <ul>
         <li><a href="index.html">Trang Chủ</a></li>
-        <li><a href="buyCar.jsp">Mua Xe</a></li>
+        <li><a href="home.jsp">Mua Xe</a></li>
         <li><a href="sellCar.html">Đăng Bán</a></li>
         <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
         <li><a href="news.html">Tin Tức</a></li>
@@ -54,7 +59,33 @@
     <label>Hình ảnh xe:</label>
     <input type="file" name="image" accept="image/*" required>
 
-    <button type="submit">Lưu</button>
+    <button type="submit">Đăng bán xe</button>
   </form>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand-col">
+        <div class="logo">Car Store</div>
+        <p class="muted">Chợ ô tô tin cậy — Kết nối người mua và người bán</p>
+      </div>
+      <div class="links-col">
+        <h4>Về chúng tôi</h4>
+        <ul>
+          <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </div>
+      <div class="contact-col">
+        <h4>Hỗ trợ</h4>
+        <p class="muted">hotline: 1900 0000</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © 2025 AutoSieuLuot. Bản quyền thuộc về AutoSieuLuot.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
