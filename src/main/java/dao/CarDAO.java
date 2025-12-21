@@ -10,7 +10,7 @@ import model.Car;
 public class CarDAO {
 	private Connection getConnection() throws Exception{
 		// nap driver
-		Class.forName("com.mysql.cj.jbdc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		//tao lien ket den database
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/car_store", "root", "");
 	}
@@ -28,7 +28,7 @@ public class CarDAO {
                 car.setBrand(rs.getString("brand"));
                 car.setModel(rs.getString("model"));
                 car.setYear(rs.getInt("year"));
-                car.setMileage(rs.getInt("mileage"));
+                car.setMileage(rs.getInt("km")); // Sử dụng cột 'km' trong database
                 car.setPrice(rs.getDouble("price"));
                 car.setLocation(rs.getString("location"));
                 car.setDescription(rs.getString("description"));
