@@ -1,285 +1,266 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Chợ ô tô</title>
-    <meta
-      name="description"
-      content="Chợ ô tô - Tìm, so sánh và mua xe nhanh chóng"
-    />
-    <link rel="stylesheet" href="css/Styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <div class="brand">
-          <div class="logo">Car Store</div>
-          <nav class="nav">
-            <a href="index.html">Trang Chủ</a>
-            <a href="home.jsp">Mua xe</a>
-            <a href="sellCar.html">Đăng bán</a>
-            <a href="gioi-thieu.html">Giới thiệu</a>
-            <a href="news.html">Tin tức</a>
-          </nav>
-        </div>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Chợ ô tô</title>
+<meta name="description"
+	content="Chợ ô tô - Tìm, so sánh và mua xe nhanh chóng" />
+<link rel="stylesheet" href="css/Styles.css" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+	rel="stylesheet" />
+</head>
+<body>
+	<!-- Header -->
+	<header class="site-header">
+		<div class="container header-inner">
+			<div class="brand">
+				<div class="logo">Car Store</div>
+				<nav class="nav">
+					<a href="index.html">Trang Chủ</a> <a href="home.jsp">Mua xe</a> <a
+						href="sellCar.html">Đăng bán</a> <a href="gioi-thieu.html">Giới
+						thiệu</a> <a href="news.html">Tin tức</a>
+				</nav>
+			</div>
 
-        <div class="header-actions">
-          <button class="btn btn-primary">Tìm xe</button>
-          <button class="btn btn-ghost">Hà Nội</button>
-        </div>
-      </div>
-    </header>
+			<div class="header-actions">
+				<button class="btn btn-primary">Tìm xe</button>
+				<button class="btn btn-ghost">Hà Nội</button>
+			</div>
+		</div>
+	</header>
 
-    <!-- Hero + Search -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <h1>Tìm xe ưng ý — Nhanh chóng &amp; An tâm</h1>
-          <p>
-            Hàng trăm tin đăng xe cũ và mới, thông tin minh bạch, hỗ trợ mua bán
-            dễ dàng.
-          </p>
-          <div class="hero-ctas">
-            <a class="btn btn-white" href="#buy" style="text-decoration: none;color:inhirit">Xem xe ngay</a>
-            <a class="btn btn-white" href="sellCar.html" style="background: transparent; border: 2px solid; color: red;text-decoration: none">Đăng bán xe</a>
-          </div>
-        </div>
+	<!-- Hero + Search -->
+	<section class="hero">
+		<div class="container hero-inner">
+			<div class="hero-content">
+				<h1>Tìm xe ưng ý — Nhanh chóng &amp; An tâm</h1>
+				<p>Hàng trăm tin đăng xe cũ và mới, thông tin minh bạch, hỗ trợ
+					mua bán dễ dàng.</p>
+				<div class="hero-ctas">
+					<a class="btn btn-white" href="#buy"
+						style="text-decoration: none; color: inherit">Xem xe ngay</a> <a
+						class="btn btn-white" href="sellCar.html"
+						style="background: transparent; border: 2px solid; color: red; text-decoration: none">Đăng
+						bán xe</a>
+				</div>
+			</div>
 
-        <div class="hero-image">
-          <img src="image/mecedes.jpg" alt="Mercedes" />
-        </div>
-      </div>
+			<div class="hero-image">
+				<img src="image/mecedes.jpg" alt="Mercedes" />
+			</div>
+		</div>
 
-      <!-- Thanh Tim Kiem Xe -->
-      <div class="container search-wrap">
-        <form class="search-bar" aria-label="Search form">
-          <label class="sr-only" for="q">Tìm kiếm</label>
-          </svg>
-          <input
-            id="q"
-            type="text"
-            placeholder="Tìm theo hãng, mẫu, ví dụ: Toyota Camry"
-          />
-          <select aria-label="Tỉnh/Thành">
-            <option value="">Toàn quốc</option>
-            <option>Hà Nội</option>
-            <option>TP. Hồ Chí Minh</option>
-            <option>Đà Nẵng</option>
-          </select>
-          <button class="btn btn-primary" type="submit">Tìm</button>
-        </form>
-      </div>
-    </section>
+		<!-- Thanh Tim Kiem Xe -->
+		<div class="container search-wrap">
+			<form class="search-bar" aria-label="Search form">
+				<label class="sr-only" for="q">Tìm kiếm</label>
+				</svg>
+				<input id="q" type="text"
+					placeholder="Tìm theo hãng, mẫu, ví dụ: Toyota Camry" />
+				<select aria-label="Tỉnh/Thành">
+					<option value="">Toàn quốc</option>
+					<option>Hà Nội</option>
+					<option>TP. Hồ Chí Minh</option>
+					<option>Đà Nẵng</option>
+				</select>
+				<button class="btn btn-primary" type="submit">Tìm</button>
+			</form>
+		</div>
+	</section>
 
-    <!-- Main content -->
-    <main class="container main-grid" id="buy">
-      <!-- Sidebar filters -->
-      <aside class="filters">
-        <div class="card">
-          <h3>Bộ lọc</h3>
+	<!-- Main content -->
+	<main class="container main-grid" id="buy">
+		<!-- Sidebar filters -->
+		<aside class="filters">
+			<div class="card">
+				<h3>Bộ lọc</h3>
 
-          <label class="field-label">Hãng</label>
-          <select>
-            <option value="">Tất cả</option>
-            <option>Kia</option>
-            <option>Honda</option>
-            <option>Mazda</option>
-            <option>Ford</option>
-            <option>Mercedes</option>
-            <option>Toyota</option>
-          </select>
+				<label class="field-label">Hãng</label> <select>
+					<option value="">Tất cả</option>
+					<option>Kia</option>
+					<option>Honda</option>
+					<option>Mazda</option>
+					<option>Ford</option>
+					<option>Mercedes</option>
+					<option>Toyota</option>
+				</select> <label class="field-label">Năm</label> <select>
+					<option value="">Tất cả</option>
+					<option>2022</option>
+					<option>2021</option>
+					<option>2020</option>
+					<option>2019</option>
+					<option>2018</option>
+				</select> <label class="field-label">Nhiên liệu</label> <select>
+					<option value="">Tất cả</option>
+					<option>Petrol(Xăng)</option>
+					<option>Diesel(Dầu)</option>
+					<option>Electric(Điện)</option>
+				</select> <label class="field-label">Khoảng giá</label> <select>
+					<option value="">Tất cả</option>
+					<option>Dưới 200 triệu</option>
+					<option>200 triệu - 500 triệu</option>
+					<option>500 triệu - 1 tỷ</option>
+					<option>Trên 1 tỷ</option>
+				</select>
+			</div>
+		</aside>
 
-          <label class="field-label">Năm</label>
-          <select>
-            <option value="">Tất cả</option>
-            <option>2022</option>
-            <option>2021</option>
-            <option>2020</option>
-            <option>2019</option>
-            <option>2018</option>
-          </select>
+		<!-- Listing area -->
+		<section class="listings">
+			<div class="listings-header">
+				<div>
+					<h2>Kết quả tìm kiếm</h2>
+					<p class="muted">6 xe tìm thấy</p>
+				</div>
 
-          <label class="field-label">Nhiên liệu</label>
-          <select>
-            <option value="">Tất cả</option>
-            <option>Petrol(Xăng)</option>
-            <option>Diesel(Dầu)</option>
-            <option>Electric(Điện)</option>
-          </select>
+				<div class="sort">
+					<label for="sort" class="sr-only">Sắp xếp</label> <select id="sort">
+						<option value="">Mặc định</option>
+						<option>Giá: Thấp → Cao</option>
+						<option>Giá: Cao → Thấp</option>
+					</select>
+				</div>
+			</div>
 
-          <label class="field-label">Khoảng giá</label>
-          <select>
-            <option value="">Tất cả</option>
-            <option>Dưới 200 triệu</option>
-            <option>200 triệu - 500 triệu</option>
-            <option>500 triệu - 1 tỷ</option>
-            <option>Trên 1 tỷ</option>
-          </select>
-        </div>
-      </aside>
+			<div class="grid-cards">
+				<!-- Card 1 -->
+				<article class="card car-card">
+					<a href="CarDetailServlet?id=1"
+						style="text-decoration: none; color: inherit">
+						<div class="card-media">
+							<img src="image/toyota-cambry.jpg" alt="Toyota Camry" />
+							<button class="fav" aria-label="Yêu thích">♥</button>
+						</div>
+						<div class="card-body">
+							<h4>Toyota Camry 2.5Q</h4>
+							<p class="muted">2020 • 45,000 km</p>
+							<div class="card-footer">
+								<div class="price">850,000,000 ₫</div>
+								<div class="location">Hà Nội</div>
+							</div>
+						</div>
+					</a>
+				</article>
 
-      <!-- Listing area -->
-      <section class="listings">
-        <div class="listings-header">
-          <div>
-            <h2>Kết quả tìm kiếm</h2>
-            <p class="muted">6 xe tìm thấy</p>
-          </div>
+				<!-- Card 2 -->
+				<article class="card car-card">
+					<a href="CarDetailServlet?id=2" style="text-decoration: none; color: inherit">
+						<div class="card-media">
+							<img src="image/honda-civic.jpg" alt="Honda Civic" />
+							<button class="fav" aria-label="Yêu thích">♥</button>
+						</div>
+						<div class="card-body">
+							<h4>Honda Civic RS</h4>
+							<p class="muted">2019 • 60,000 km</p>
+							<div class="card-footer">
+								<div class="price">720,000,000 ₫</div>
+								<div class="location">TP. Hồ Chí Minh</div>
+							</div>
+						</div>
+					</a>
+				</article>
 
-          <div class="sort">
-            <label for="sort" class="sr-only">Sắp xếp</label>
-            <select id="sort">
-              <option value="">Mặc định</option>
-              <option>Giá: Thấp → Cao</option>
-              <option>Giá: Cao → Thấp</option>
-            </select>
-          </div>
-        </div>
+				<!-- Card 3 -->
+				<article class="card car-card">
+					<a href="CarDetailServlet?id=3" style="text-decoration: none; color: inherit">
+						<div class="card-media">
+							<img src="image/mazda-3.jpg" alt="Mazda 3" />
+							<button class="fav" aria-label="Yêu thích">♥</button>
+						</div>
+						<div class="card-body">
+							<h4>Mazda 3</h4>
+							<p class="muted">2021 • 30,000 km</p>
+							<div class="card-footer">
+								<div class="price">450,000,000 ₫</div>
+								<div class="location">Đà Nẵng</div>
+							</div>
+						</div>
+					</a>
+				</article>
 
-        <div class="grid-cards">
-          <!-- Card 1 -->
-          <article class="card car-card">
-            <a href="CarDetailServlet?id=1" style="text-decoration: none; color: inherit">
-              <div class="card-media">
-                <img
-                  src="image/toyota-cambry.jpg"
-                  alt="Toyota Camry"
-                />
-                <button class="fav" aria-label="Yêu thích">♥</button>
-              </div>
-              <div class="card-body">
-                <h4>Toyota Camry 2.5Q</h4>
-                <p class="muted">2020 • 45,000 km</p>
-                <div class="card-footer">
-                  <div class="price">850,000,000 ₫</div>
-                  <div class="location">Hà Nội</div>
-                </div>
-              </div>
-            </a>
-          </article>
+				<!-- Card 4 -->
+				<article class="card car-card">
+					<a href="CarDetailServlet?id=4" style="text-decoration: none; color: inherit">
+						<div class="card-media">
+							<img src="image/fordranger.jpg" alt="Ford Ranger" />
+							<button class="fav" aria-label="Yêu thích">♥</button>
+						</div>
+						<div class="card-body">
+							<h4>Ford Ranger Wildtrak</h4>
+							<p class="muted">2018 • 80,000 km</p>
+							<div class="card-footer">
+								<div class="price">650,000,000 ₫</div>
+								<div class="location">Hà Nội</div>
+							</div>
+						</div>
+					</a>
+				</article>
 
-          <!-- Card 2 -->
-          <article class="card car-card">
-            <div class="card-media">
-              <img
-                src="image/honda-civic.jpg"
-                alt="Honda Civic"
-              />
-              <button class="fav" aria-label="Yêu thích">♥</button>
-            </div>
-            <div class="card-body">
-              <h4>Honda Civic RS</h4>
-              <p class="muted">2019 • 60,000 km</p>
-              <div class="card-footer">
-                <div class="price">720,000,000 ₫</div>
-                <div class="location">TP. Hồ Chí Minh</div>
-              </div>
-            </div>
-          </article>
+				<!-- Card 5 -->
+				<article class="card car-card">
+					<a href="CarDetailServlet?id=5" style="text-decoration: none; color: inherit">
+						<div class="card-media">
+							<img src="image/KIA.jpg" alt="KIA Carnival Signature 2.5" />
+							<button class="fav" aria-label="Yêu thích">♥</button>
+						</div>
+						<div class="card-body">
+							<h4>KIA Carnival Signature 2.5</h4>
+							<p class="muted">2022 • 12,000 km</p>
+							<div class="card-footer">
+								<div class="price">1,590,000,000 ₫</div>
+								<div class="location">TP. Hồ Chí Minh</div>
+							</div>
+						</div>
+					</a>
+				</article>
 
-          <!-- Card 3 -->
-          <article class="card car-card">
-            <div class="card-media">
-              <img
-                src="image/mazda-3.jpg"
-                alt="Mazda 3"
-              />
-              <button class="fav" aria-label="Yêu thích">♥</button>
-            </div>
-            <div class="card-body">
-              <h4>Mazda 3</h4>
-              <p class="muted">2021 • 30,000 km</p>
-              <div class="card-footer">
-                <div class="price">450,000,000 ₫</div>
-                <div class="location">Đà Nẵng</div>
-              </div>
-            </div>
-          </article>
+				<!-- Card 6 -->
+				<article class="card car-card">
+					<a href="CarDetailServlet?id=6" style="text-decoration: none; color: inherit">
+						<div class="card-media">
+							<img src="image/BMW.jpg" alt="BMW 2025" />
+							<button class="fav" aria-label="Yêu thích">♥</button>
+						</div>
+						<div class="card-body">
+							<h4>BMW 2025</h4>
+							<p class="muted">2025 • 90,000 km</p>
+							<div class="card-footer">
+								<div class="price">1,330,000,000 ₫</div>
+								<div class="location">Hà Nội</div>
+							</div>
+						</div>
+					</a>
+				</article>
+			</div>
+		</section>
+	</main>
 
-          <!-- Card 4 -->
-          <article class="card car-card">
-            <div class="card-media">
-              <img
-                src="image/fordranger.jpg"
-                alt="Ford Ranger"
-              />
-              <button class="fav" aria-label="Yêu thích">♥</button>
-            </div>
-            <div class="card-body">
-              <h4>Ford Ranger Wildtrak</h4>
-              <p class="muted">2018 • 80,000 km</p>
-              <div class="card-footer">
-                <div class="price">650,000,000 ₫</div>
-                <div class="location">Hà Nội</div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 5 -->
-          <article class="card car-card">
-            <div class="card-media">
-              <img src="image/KIA.jpg" alt="KIA Carnival Signature 2.5" />
-              <button class="fav" aria-label="Yêu thích">♥</button>
-            </div>
-            <div class="card-body">
-              <h4>KIA Carnival Signature 2.5</h4>
-              <p class="muted">2022 • 12,000 km</p>
-              <div class="card-footer">
-                <div class="price">1,590,000,000 ₫</div>
-                <div class="location">TP. Hồ Chí Minh</div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 6 -->
-          <article class="card car-card">
-            <div class="card-media">
-              <img src="image/BMW.jpg" alt="BMW 2025" />
-              <button class="fav" aria-label="Yêu thích">♥</button>
-            </div>
-            <div class="card-body">
-              <h4>BMW 2025</h4>
-              <p class="muted">2025 • 90,000 km</p>
-              <div class="card-footer">
-                <div class="price">1,330,000,000 ₫</div>
-                <div class="location">Hà Nội</div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="brand-col">
-          <div class="logo">Car Store</div>
-          <p class="muted">Chợ ô tô tin cậy — Kết nối người mua & người bán</p>
-        </div>
-        <div class="links-col">
-          <h4>Về chúng tôi</h4>
-          <ul>
-            <li><a href="#about">Giới thiệu</a></li>
-            <li><a href="#contact">Liên hệ</a></li>
-          </ul>
-        </div>
-        <div class="contact-col">
-          <h4>Hỗ trợ</h4>
-          <p class="muted">hotline: 1900 0000</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          © 2025 AutoSieuLuot. Bản quyền thuộc về AutoSieuLuot.
-        </div>
-      </div>
-    </footer>
-  </body>
+	<!-- Footer -->
+	<footer class="site-footer">
+		<div class="container footer-inner">
+			<div class="brand-col">
+				<div class="logo">Car Store</div>
+				<p class="muted">Chợ ô tô tin cậy — Kết nối người mua & người
+					bán</p>
+			</div>
+			<div class="links-col">
+				<h4>Về chúng tôi</h4>
+				<ul>
+					<li><a href="#about">Giới thiệu</a></li>
+					<li><a href="#contact">Liên hệ</a></li>
+				</ul>
+			</div>
+			<div class="contact-col">
+				<h4>Hỗ trợ</h4>
+				<p class="muted">hotline: 1900 0000</p>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="container">© 2025 AutoSieuLuot. Bản quyền thuộc về
+				AutoSieuLuot.</div>
+		</div>
+	</footer>
+</body>
 </html>

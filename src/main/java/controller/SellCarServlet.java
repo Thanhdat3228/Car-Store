@@ -1,17 +1,16 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.MultipartConfig;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
+
 
 @WebServlet("/SellCarServlet")
 @MultipartConfig(fileSizeThreshold=1024*1024, maxFileSize=1024*1024*5)
@@ -35,29 +34,6 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     String uploadPath = getServletContext().getRealPath("/") + imagePath;
     imagePart.write(uploadPath);
 
-    try {
-      Class.forName("com.mysql.cj.jdbc.Driver");
-      Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/car_store", "root", "");
-
-      String sql = "INSERT INTO cars VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-      PreparedStatement stmt = conn.prepareStatement(sql);
-      stmt.setString(1, id);
-      stmt.setString(2, brand);
-      stmt.setString(3, model);
-      stmt.setInt(4, year);
-      stmt.setInt(5, km);
-      stmt.setLong(6, price);
-      stmt.setString(7, location);
-      stmt.setString(8, description);
-      stmt.setString(9, imagePath);
-
-      stmt.executeUpdate();
-      conn.close();
-
-      response.sendRedirect("home.jsp");
-    } catch (Exception e) {
-      e.printStackTrace();
-      response.getWriter().println("Lỗi: " + e.getMessage());
-    }
   }
+
 }

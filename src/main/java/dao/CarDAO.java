@@ -12,7 +12,7 @@ public class CarDAO {
 		// nap driver
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		//tao lien ket den database
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/car_store", "root", "");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/car_store", "root","");
 	}
 
 	public Car getCarById(int id) {
