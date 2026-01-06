@@ -126,7 +126,7 @@
         <div class="brand">
           <div class="logo">Car Store</div>
           <nav class="nav">
-            <a href="index.html">Trang chủ</a>
+            <a href="index.html">Trang Chủ</a>
             <a href="home.jsp">Mua xe</a>
             <a href="sellCar.html">Đăng bán</a>
             <a href="gioi-thieu.html">Giới thiệu</a>

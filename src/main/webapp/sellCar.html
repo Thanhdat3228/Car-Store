@@ -11,24 +11,24 @@
   />
 </head>
 <body>
-<header>
-  <div class="navbar">
-    <div class="logo">Car Store</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Trang Chủ</a></li>
-        <li><a href="home.jsp">Mua Xe</a></li>
-        <li><a href="sellCar.html">Đăng Bán</a></li>
-        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
-        <li><a href="news.html">Tin Tức</a></li>
-      </ul>
-    </nav>
-    <div class="actions">
-      <button class="btn">Tìm xe</button>
-      <button class="btn">Hà Nội</button>
-    </div>
-  </div>
-</header>
+<!-- Header -->
+	<header class="site-header">
+		<div class="container header-inner">
+			<div class="brand">
+				<div class="logo">Car Store</div>
+				<nav class="nav">
+					<a href="index.html">Trang chủ</a> <a href="home.jsp">Mua xe</a> <a
+						href="sellCar.html">Đăng bán</a> <a href="gioi-thieu.html">Giới
+						thiệu</a> <a href="news.html">Tin tức</a>
+				</nav>
+			</div>
+
+			<div class="header-actions">
+				<button class="btn btn-primary">Tìm xe</button>
+				<button class="btn btn-ghost">Hà Nội</button>
+			</div>
+		</div>
+	</header>
 
   <h2>Đăng bán xe</h2>
   <form action="SellCarServlet" method="post" enctype="multipart/form-data">
@@ -78,7 +78,7 @@
       </div>
       <div class="contact-col">
         <h4>Hỗ trợ</h4>
-        <p class="muted">hotline: 1900 0000</p>
+        <p class="muted">Hotline: 1900 0000</p>
       </div>
     </div>
     <div class="footer-bottom">
