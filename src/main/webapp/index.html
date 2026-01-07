@@ -54,18 +54,16 @@
 
 		<!-- Thanh Tim Kiem Xe -->
 		<div class="container search-wrap">
-			<form class="search-bar" aria-label="Search form">
-				<label class="sr-only" for="q">Tìm kiếm</label>
-				</svg>
-				<input id="q" type="text"
-					placeholder="Tìm theo hãng, mẫu, ví dụ: Toyota Camry" />
-				<select aria-label="Tỉnh/Thành">
+			<form class="search-bar" action="SearchCarServlet" method="post">
+				<input type="text" name="keyword"
+					placeholder="Tìm theo hãng, mẫu, ví dụ: Toyota Camry" /> <select
+					name="location">
 					<option value="">Toàn quốc</option>
-					<option>Hà Nội</option>
-					<option>TP. Hồ Chí Minh</option>
-					<option>Đà Nẵng</option>
+					<option value="Hà Nội">Hà Nội</option>
+					<option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+					<option value="Đà Nẵng">Đà Nẵng</option>
 				</select>
-				<button class="btn btn-primary" type="submit">Tìm</button>
+				<button type="submit">Tìm</button>
 			</form>
 		</div>
 	</section>
@@ -146,7 +144,8 @@
 
 				<!-- Card 2 -->
 				<article class="card car-card">
-					<a href="CarDetailServlet?id=2" style="text-decoration: none; color: inherit">
+					<a href="CarDetailServlet?id=2"
+						style="text-decoration: none; color: inherit">
 						<div class="card-media">
 							<img src="image/honda-civic.jpg" alt="Honda Civic" />
 							<button class="fav" aria-label="Yêu thích">♥</button>
@@ -164,7 +163,8 @@
 
 				<!-- Card 3 -->
 				<article class="card car-card">
-					<a href="CarDetailServlet?id=3" style="text-decoration: none; color: inherit">
+					<a href="CarDetailServlet?id=3"
+						style="text-decoration: none; color: inherit">
 						<div class="card-media">
 							<img src="image/mazda-3.jpg" alt="Mazda 3" />
 							<button class="fav" aria-label="Yêu thích">♥</button>
@@ -182,7 +182,8 @@
 
 				<!-- Card 4 -->
 				<article class="card car-card">
-					<a href="CarDetailServlet?id=4" style="text-decoration: none; color: inherit">
+					<a href="CarDetailServlet?id=4"
+						style="text-decoration: none; color: inherit">
 						<div class="card-media">
 							<img src="image/fordranger.jpg" alt="Ford Ranger" />
 							<button class="fav" aria-label="Yêu thích">♥</button>
@@ -200,7 +201,8 @@
 
 				<!-- Card 5 -->
 				<article class="card car-card">
-					<a href="CarDetailServlet?id=5" style="text-decoration: none; color: inherit">
+					<a href="CarDetailServlet?id=5"
+						style="text-decoration: none; color: inherit">
 						<div class="card-media">
 							<img src="image/KIA.jpg" alt="KIA Carnival Signature 2.5" />
 							<button class="fav" aria-label="Yêu thích">♥</button>
@@ -218,7 +220,8 @@
 
 				<!-- Card 6 -->
 				<article class="card car-card">
-					<a href="CarDetailServlet?id=6" style="text-decoration: none; color: inherit">
+					<a href="CarDetailServlet?id=6"
+						style="text-decoration: none; color: inherit">
 						<div class="card-media">
 							<img src="image/BMW.jpg" alt="BMW 2025" />
 							<button class="fav" aria-label="Yêu thích">♥</button>
