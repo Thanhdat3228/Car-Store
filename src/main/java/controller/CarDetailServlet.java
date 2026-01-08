@@ -10,17 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.CarDAO;
+import dao.CarSpecsDAO;
 import model.Car;
+import model.CarSpecs;
 
 @WebServlet("/CarDetailServlet")
 public class CarDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		
+
 		try {
 			// Lấy id từ parameter
 			String idParam = request.getParameter("id");
@@ -42,11 +44,14 @@ public class CarDetailServlet extends HttpServlet {
 				response.sendRedirect("home.jsp?error=notfound");
 				return;
 			}
+			CarSpecsDAO specsDao = new CarSpecsDAO();
+			CarSpecs specs = specsDao.getSpecsByCarId(id);
 
 			request.setAttribute("car", car);
+			request.setAttribute("specs", specs);
 			RequestDispatcher rd = request.getRequestDispatcher("car_detail.jsp");
 			rd.forward(request, response);
-			
+
 		} catch (NumberFormatException e) {
 			// ID không hợp lệ
 			e.printStackTrace();

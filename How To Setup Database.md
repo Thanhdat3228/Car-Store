@@ -38,3 +38,20 @@ Sau khi chạy script, bạn sẽ có:
 | image | VARCHAR(255) | Đường dẫn ảnh |
 | created_at | TIMESTAMP | Thời gian tạo |
 
+
+
+## Cấu trúc bảng carSpecs(thông số kỹ thuật xe):
+CREATE TABLE car_specs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    car_id INT NOT NULL, -- liên kết với bảng cars
+    seat_count INT, -- số chỗ ngồi
+    dimensions VARCHAR(100), -- dài x rộng x cao
+    wheel_type VARCHAR(100), -- loại mâm/lốp
+    weight INT, -- tự trọng/tải trọng
+    ground_clearance INT, -- khoảng sáng gầm xe (mm)
+    engine VARCHAR(100), -- loại động cơ
+    fuel_type VARCHAR(50), -- loại nhiên liệu
+    FOREIGN KEY (car_id) REFERENCES cars(id) ON DELETE CASCADE
+);
+
+

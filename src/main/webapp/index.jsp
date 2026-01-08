@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:if test="${empty carList}">
-    <jsp:forward page="HomeServlet" />
+	<jsp:forward page="HomeServlet" />
 </c:if>
 <!DOCTYPE html>
 <html lang="vi">
@@ -46,7 +46,7 @@
 					mua bán dễ dàng.</p>
 				<div class="hero-ctas">
 					<a class="btn btn-white" href="#buy"
-						style="background: transparent; border: 2px solid; color:yellow; text-decoration: none">Xem
+						style="background: transparent; border: 2px solid; color: yellow; text-decoration: none">Xem
 						xe ngay</a> <a class="btn btn-white" href="sellCar.html"
 						style="background: transparent; border: 2px solid; color: red; text-decoration: none">Đăng
 						bán xe</a>
@@ -147,10 +147,14 @@
 								<button class="fav" aria-label="Yêu thích">♥</button>
 							</div>
 							<div class="card-body">
-								<h4>${car.brand}${car.model}</h4>
+								<h4>${car.brand} ${car.model}</h4>
 								<p class="muted">${car.year}•${car.mileage}km</p>
 								<div class="card-footer">
-									<div class="price"><fmt:formatNumber value="${car.price}" type="number" groupingUsed="true" />₫</div>
+									<div class="price">
+										<fmt:formatNumber value="${car.price}" type="number"
+											groupingUsed="true" />
+										₫
+									</div>
 									<div class="location">${car.location}</div>
 								</div>
 							</div>
