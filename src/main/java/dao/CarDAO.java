@@ -4,8 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.el.ListELResolver;
+
+import com.mysql.cj.xdevapi.PreparableStatement;
+import com.mysql.cj.xdevapi.Result;
 
 import model.Car;
 
@@ -90,4 +96,48 @@ public class CarDAO {
 
         return list;
     }
+
+	public List<Car> getCarsSortedByPriceAsc() {
+		String sql="SELECT * FROM cars ORDER BY price ASC";
+		return getCarsByQuery(sql);
+	}
+	public List<Car> getCarsSortedByPriceDesc() {
+	    String sql = "SELECT * FROM cars ORDER BY price DESC";
+	    return getCarsByQuery(sql);
+	}
+
+	private List<Car> getCarsByQuery(String sql) {
+		List<Car> list=new ArrayList<>();
+		try(Connection conn=getConnection();
+			PreparedStatement ps=conn.prepareStatement(sql);
+			ResultSet rs=ps.executeQuery()){
+			  while (rs.next()) {
+	                Car car = new Car();
+	                car.setId(rs.getInt("id"));
+	                car.setBrand(rs.getString("brand"));
+	                car.setModel(rs.getString("model"));
+	                car.setYear(rs.getInt("year"));
+	                car.setMileage(rs.getInt("km"));
+	                car.setPrice(rs.getDouble("price"));
+	                car.setLocation(rs.getString("location"));
+	                car.setImage(rs.getString("image"));
+
+	                list.add(car);
+	            }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	public List<Car> getAllCars() {
+		String sql="SELECT * FROM cars";
+		return getCarsByQuery(sql);
+	}
+
+
 }

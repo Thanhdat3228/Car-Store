@@ -1,5 +1,7 @@
 package model;
 
+import java.text.DecimalFormat;
+
 public class Car {
     private int id;
     private String brand;

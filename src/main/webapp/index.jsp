@@ -1,3 +1,9 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:if test="${empty carList}">
+    <jsp:forward page="HomeServlet" />
+</c:if>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -18,7 +24,7 @@
 			<div class="brand">
 				<div class="logo">Car Store</div>
 				<nav class="nav">
-					<a href="index.html">Trang chủ</a> <a href="home.jsp">Mua xe</a> <a
+					<a href="index.jsp">Trang chủ</a> <a href="home.jsp">Mua xe</a> <a
 						href="sellCar.html">Đăng bán</a> <a href="gioi-thieu.html">Giới
 						thiệu</a> <a href="news.html">Tin tức</a>
 				</nav>
@@ -40,8 +46,8 @@
 					mua bán dễ dàng.</p>
 				<div class="hero-ctas">
 					<a class="btn btn-white" href="#buy"
-						style="text-decoration: none; color: inherit">Xem xe ngay</a> <a
-						class="btn btn-white" href="sellCar.html"
+						style="background: transparent; border: 2px solid; color:yellow; text-decoration: none">Xem
+						xe ngay</a> <a class="btn btn-white" href="sellCar.html"
 						style="background: transparent; border: 2px solid; color: red; text-decoration: none">Đăng
 						bán xe</a>
 				</div>
@@ -113,132 +119,50 @@
 					<p class="muted">6 xe tìm thấy</p>
 				</div>
 
-				<div class="sort">
-					<label for="sort" class="sr-only">Sắp xếp</label> <select id="sort">
-						<option value="">Mặc định</option>
-						<option>Giá: Thấp → Cao</option>
-						<option>Giá: Cao → Thấp</option>
-					</select>
-				</div>
+				<form action="SortServlet" method="get">
+					<div class="sort">
+						<label>Sắp xếp</label> <select name="sort"
+							onchange="this.form.submit()">
+							<option value="" ${empty param.sort ? 'selected' : ''}>Mặc
+								định</option>
+							<option value="lowToHigh"
+								${param.sort == 'lowToHigh' ? 'selected' : ''}>Thấp →
+								Cao</option>
+							<option value="highToLow"
+								${param.sort == 'highToLow' ? 'selected' : ''}>Cao →
+								Thấp</option>
+						</select>
+					</div>
+				</form>
 			</div>
+
 
 			<div class="grid-cards">
-				<!-- Card 1 -->
-				<article class="card car-card">
-					<a href="CarDetailServlet?id=1"
-						style="text-decoration: none; color: inherit">
-						<div class="card-media">
-							<img src="image/toyota-cambry.jpg" alt="Toyota Camry" />
-							<button class="fav" aria-label="Yêu thích">♥</button>
-						</div>
-						<div class="card-body">
-							<h4>Toyota Camry 2.5Q</h4>
-							<p class="muted">2020 • 45,000 km</p>
-							<div class="card-footer">
-								<div class="price">850,000,000 ₫</div>
-								<div class="location">Hà Nội</div>
+				<c:forEach var="car" items="${carList}">
+					<article class="card car-card">
+						<a href="CarDetailServlet?id=${car.id}"
+							style="text-decoration: none; color: inherit">
+							<div class="card-media">
+								<img src="${car.image}" alt="${car.brand} ${car.model}" />
+								<button class="fav" aria-label="Yêu thích">♥</button>
 							</div>
-						</div>
-					</a>
-				</article>
-
-				<!-- Card 2 -->
-				<article class="card car-card">
-					<a href="CarDetailServlet?id=2"
-						style="text-decoration: none; color: inherit">
-						<div class="card-media">
-							<img src="image/honda-civic.jpg" alt="Honda Civic" />
-							<button class="fav" aria-label="Yêu thích">♥</button>
-						</div>
-						<div class="card-body">
-							<h4>Honda Civic RS</h4>
-							<p class="muted">2019 • 60,000 km</p>
-							<div class="card-footer">
-								<div class="price">720,000,000 ₫</div>
-								<div class="location">TP. Hồ Chí Minh</div>
+							<div class="card-body">
+								<h4>${car.brand}${car.model}</h4>
+								<p class="muted">${car.year}•${car.mileage}km</p>
+								<div class="card-footer">
+									<div class="price"><fmt:formatNumber value="${car.price}" type="number" groupingUsed="true" />₫</div>
+									<div class="location">${car.location}</div>
+								</div>
 							</div>
-						</div>
-					</a>
-				</article>
-
-				<!-- Card 3 -->
-				<article class="card car-card">
-					<a href="CarDetailServlet?id=3"
-						style="text-decoration: none; color: inherit">
-						<div class="card-media">
-							<img src="image/mazda-3.jpg" alt="Mazda 3" />
-							<button class="fav" aria-label="Yêu thích">♥</button>
-						</div>
-						<div class="card-body">
-							<h4>Mazda 3</h4>
-							<p class="muted">2021 • 30,000 km</p>
-							<div class="card-footer">
-								<div class="price">450,000,000 ₫</div>
-								<div class="location">Đà Nẵng</div>
-							</div>
-						</div>
-					</a>
-				</article>
-
-				<!-- Card 4 -->
-				<article class="card car-card">
-					<a href="CarDetailServlet?id=4"
-						style="text-decoration: none; color: inherit">
-						<div class="card-media">
-							<img src="image/fordranger.jpg" alt="Ford Ranger" />
-							<button class="fav" aria-label="Yêu thích">♥</button>
-						</div>
-						<div class="card-body">
-							<h4>Ford Ranger Wildtrak</h4>
-							<p class="muted">2018 • 80,000 km</p>
-							<div class="card-footer">
-								<div class="price">650,000,000 ₫</div>
-								<div class="location">Hà Nội</div>
-							</div>
-						</div>
-					</a>
-				</article>
-
-				<!-- Card 5 -->
-				<article class="card car-card">
-					<a href="CarDetailServlet?id=5"
-						style="text-decoration: none; color: inherit">
-						<div class="card-media">
-							<img src="image/KIA.jpg" alt="KIA Carnival Signature 2.5" />
-							<button class="fav" aria-label="Yêu thích">♥</button>
-						</div>
-						<div class="card-body">
-							<h4>KIA Carnival Signature 2.5</h4>
-							<p class="muted">2022 • 12,000 km</p>
-							<div class="card-footer">
-								<div class="price">1,590,000,000 ₫</div>
-								<div class="location">TP. Hồ Chí Minh</div>
-							</div>
-						</div>
-					</a>
-				</article>
-
-				<!-- Card 6 -->
-				<article class="card car-card">
-					<a href="CarDetailServlet?id=6"
-						style="text-decoration: none; color: inherit">
-						<div class="card-media">
-							<img src="image/BMW.jpg" alt="BMW 2025" />
-							<button class="fav" aria-label="Yêu thích">♥</button>
-						</div>
-						<div class="card-body">
-							<h4>BMW 2025</h4>
-							<p class="muted">2025 • 90,000 km</p>
-							<div class="card-footer">
-								<div class="price">1,330,000,000 ₫</div>
-								<div class="location">Hà Nội</div>
-							</div>
-						</div>
-					</a>
-				</article>
+						</a>
+					</article>
+				</c:forEach>
 			</div>
 		</section>
+
 	</main>
+
+
 
 	<!-- Footer -->
 	<footer class="site-footer">
