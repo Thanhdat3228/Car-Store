@@ -5,7 +5,21 @@
 -- Tạo database (nếu chưa tồn tại)
 CREATE DATABASE IF NOT EXISTS car_store;
 USE car_store;
+-- tạo bảng đăng ký lái thử
+CREATE TABLE test_drive_registration (
+    id INT AUTO_INCREMENT PRIMARY KEY,
 
+    car_id INT NOT NULL,
+    car_name VARCHAR(255) NOT NULL,
+
+    full_name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+
+    test_date DATE NOT NULL,
+    test_time TIME NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 -- Tạo bảng cars
 CREATE TABLE IF NOT EXISTS cars (
     id INT AUTO_INCREMENT PRIMARY KEY,
