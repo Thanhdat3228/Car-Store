@@ -15,7 +15,7 @@
 		Chúng tôi sẽ liên hệ với bạn sớm nhất.
 	</p>
 
-	<div class="form-actions" style="justify-content:center;">
+	<div class="form-actions" style="justify-content:center; text-decoration: none">
 		<a href="home.jsp" class="btn-primary">Về trang chủ</a>
 	</div>
 </div>
