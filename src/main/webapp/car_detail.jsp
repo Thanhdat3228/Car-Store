@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ page import="model.Car"%>
-<%@ page import="model.CarSpecs" %>
+<%@ page import="model.CarSpecs"%>
 <%
 Car car = (Car) request.getAttribute("car");
 if (car == null) {
@@ -210,8 +210,11 @@ if (specs != null) {
 				</div>
 
 				<div class="action-buttons">
-					<button class="btn btn-primary btn-large">Liên hệ người
-						bán</button>
+					<form action="testDrive.jsp" method="get">
+						<input type="hidden" name="carId" value="<%=car.getId()%>">
+						<button type="submit" class="btn btn-primary btn-large">
+							Liên hệ người bán</button>
+					</form>
 					<button class="btn btn-ghost btn-large">Yêu thích</button>
 				</div>
 			</div>
@@ -280,10 +283,11 @@ if (specs != null) {
 		<%
 		}
 		%>
-		
+
 		<!-- Back button -->
 		<div style="text-align: center; margin-bottom: 40px;">
-			<a href="home.jsp" class="btn btn-ghost" style="text-decoration: none">← Quay lại danh sách</a>
+			<a href="home.jsp" class="btn btn-ghost"
+				style="text-decoration: none">← Quay lại danh sách</a>
 		</div>
 
 	</main>
