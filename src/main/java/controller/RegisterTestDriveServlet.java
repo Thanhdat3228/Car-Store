@@ -1,0 +1,87 @@
+package controller;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import dao.*;
+
+/**
+ * Servlet implementation class RegisterTestDriveServlet
+ */
+@WebServlet("/RegisterTestDriveServlet")
+public class RegisterTestDriveServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private Connection getConnection() throws Exception{
+		// nap driver
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		//tao lien ket den database
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/car_store", "root","");
+	}
+
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public RegisterTestDriveServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+
+	    String carId = request.getParameter("carId");
+	    if (carId == null || carId.isEmpty()) {
+	        response.sendRedirect(request.getContextPath() + "/home.jsp");
+	        return;
+	    }
+
+	    String carName = request.getParameter("carName");
+	    String fullName = request.getParameter("fullname");
+	    String phone = request.getParameter("phone");
+	    String testDate = request.getParameter("date");
+	    String testTime = request.getParameter("time");
+
+	    try (Connection conn = getConnection()) {
+
+	        String sql = "INSERT INTO test_drive_registration "
+	                   + "(car_id, car_name, full_name, phone, test_date, test_time) "
+	                   + "VALUES (?, ?, ?, ?, ?, ?)";
+
+	        PreparedStatement ps = conn.prepareStatement(sql);
+	        ps.setInt(1, Integer.parseInt(carId));
+	        ps.setString(2, carName);
+	        ps.setString(3, fullName);
+	        ps.setString(4, phone);
+	        ps.setDate(5, java.sql.Date.valueOf(testDate));
+	        ps.setTime(6, java.sql.Time.valueOf(testTime + ":00"));
+
+	        ps.executeUpdate();
+
+	        response.sendRedirect(request.getContextPath() + "/testDriveSuccess.jsp");
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        response.sendRedirect(
+	            request.getContextPath() + "/testDrive.jsp?error=true&carId=" + carId
+	        );
+	    }
+	}
+}
