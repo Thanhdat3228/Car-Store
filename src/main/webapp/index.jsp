@@ -1,9 +1,14 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <c:if test="${empty carList}">
-	<jsp:forward page="HomeServlet" />
+    <jsp:forward page="HomeServlet" />
 </c:if>
+
+
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -57,21 +62,6 @@
 				<img src="image/mecedes.jpg" alt="Mercedes" />
 			</div>
 		</div>
-
-		<!-- Thanh Tim Kiem Xe -->
-		<div class="container search-wrap">
-			<form class="search-bar" action="SearchCarServlet" method="post">
-				<input type="text" name="keyword"
-					placeholder="Tìm theo hãng, mẫu, ví dụ: Toyota Camry" /> <select
-					name="location">
-					<option value="">Toàn quốc</option>
-					<option value="Hà Nội">Hà Nội</option>
-					<option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
-					<option value="Đà Nẵng">Đà Nẵng</option>
-				</select>
-				<button type="submit">Tìm</button>
-			</form>
-		</div>
 	</section>
 
 	<!-- Main content -->
@@ -116,7 +106,7 @@
 			<div class="listings-header">
 				<div>
 					<h2>Kết quả tìm kiếm</h2>
-					<p class="muted">6 xe tìm thấy</p>
+					<p class="muted">${fn:length(carList)} xe tìm thấy</p>
 				</div>
 
 				<form action="SortServlet" method="get">
@@ -134,6 +124,16 @@
 						</select>
 					</div>
 				</form>
+
+				<!-- Thanh Tim Kiem Xe -->
+				<form action="SearchCarServlet" method="get">
+					<div class="keyword">
+						<input type="text" name="keyword"
+							placeholder="Nhập tên xe cần tìm..." />
+						<button type="submit">Tìm</button>
+					</div>
+				</form>
+
 			</div>
 
 
@@ -143,12 +143,12 @@
 						<a href="CarDetailServlet?id=${car.id}"
 							style="text-decoration: none; color: inherit">
 							<div class="card-media">
-								<img src="${car.image}" alt="${car.brand} ${car.model}" />
+								<img src="${car.image}" alt="${car.brand}${car.model}" />
 								<button class="fav" aria-label="Yêu thích">♥</button>
 							</div>
 							<div class="card-body">
 								<h4>${car.brand} ${car.model}</h4>
-								<p class="muted">${car.year}•${car.mileage}km</p>
+								<p class="muted">${car.year} • ${car.mileage}km</p>
 								<div class="card-footer">
 									<div class="price">
 										<fmt:formatNumber value="${car.price}" type="number"
@@ -163,6 +163,7 @@
 				</c:forEach>
 			</div>
 		</section>
+
 
 	</main>
 

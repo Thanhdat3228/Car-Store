@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS cars (
     brand VARCHAR(50) NOT NULL,
     model VARCHAR(100) NOT NULL,
     year INT NOT NULL,
-    km INT NOT NULL,
+    miliage INT NOT NULL,
     price BIGINT NOT NULL,
     location VARCHAR(100) NOT NULL,
     description TEXT,
