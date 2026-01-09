@@ -36,7 +36,7 @@ public class CarDAO {
 				car.setBrand(rs.getString("brand"));
 				car.setModel(rs.getString("model"));
 				car.setYear(rs.getInt("year"));
-				car.setMileage(rs.getInt("km")); // Sử dụng cột 'km' trong database
+				car.setMileage(rs.getInt("mileage")); // Sử dụng cột 'km' trong database
 				car.setPrice(rs.getDouble("price"));
 				car.setLocation(rs.getString("location"));
 				car.setDescription(rs.getString("description"));
@@ -82,7 +82,7 @@ public class CarDAO {
 				car.setBrand(rs.getString("brand"));
 				car.setModel(rs.getString("model"));
 				car.setYear(rs.getInt("year"));
-				car.setMileage(rs.getInt("km"));
+				car.setMileage(rs.getInt("mileage"));
 				car.setPrice(rs.getDouble("price"));
 				car.setLocation(rs.getString("location"));
 				car.setImage(rs.getString("image"));

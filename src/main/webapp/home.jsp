@@ -60,7 +60,7 @@
 				car.put("model", rs.getString("model"));
 				car.put("year", rs.getInt("year"));
 				car.put("price", rs.getLong("price"));
-				car.put("km", rs.getInt("km"));
+				car.put("mileage", rs.getInt("mileage"));
 				car.put("location", rs.getString("location"));
 				carList.add(car);
 			}
@@ -75,7 +75,7 @@
 				String model = (String) car.get("model");
 				int year = (Integer) car.get("year");
 				long price = (Long) car.get("price");
-				int km = (Integer) car.get("km");
+				int mileage = (Integer) car.get("mileage");
 				String location = (String) car.get("location");
 				int id = (Integer) car.get("id");
 			%>
@@ -93,8 +93,8 @@
 							<%=model%></h4>
 						<p class="muted"><%=year%>
 							•
-							<%=String.format("%,d", km)%>
-							km
+							<%=String.format("%,d", mileage)%>
+							mileage
 						</p>
 						<div class="card-footer">
 							<div class="price"><%=String.format("%,d", price)%>
