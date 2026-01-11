@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import dao.CarDAO;
 import model.Car;
 
-/**
- * Servlet implementation class HomeServlet
- */
 @WebServlet("/HomeServlet")
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,9 +22,6 @@ public class HomeServlet extends HttpServlet {
     public HomeServlet() {
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		CarDAO carDAO = new CarDAO();
 	    List<Car> carList = carDAO.getAllCars(); // lấy toàn bộ xe

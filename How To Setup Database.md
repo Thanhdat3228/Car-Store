@@ -31,7 +31,7 @@ Sau khi chạy script, bạn sẽ có:
 | brand | VARCHAR(50) | Thương hiệu xe |
 | model | VARCHAR(100) | Mẫu xe |
 | year | INT | Năm sản xuất |
-| km | INT | Số km đã đi |
+| mileage | INT | Số km đã đi |
 | price | BIGINT | Giá bán (VNĐ) |
 | location | VARCHAR(100) | Địa điểm |
 | description | TEXT | Mô tả chi tiết |

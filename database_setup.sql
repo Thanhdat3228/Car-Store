@@ -5,28 +5,15 @@
 -- Tạo database (nếu chưa tồn tại)
 CREATE DATABASE IF NOT EXISTS car_store;
 USE car_store;
--- tạo bảng đăng ký lái thử
-CREATE TABLE test_drive_registration (
-    id INT AUTO_INCREMENT PRIMARY KEY,
 
-    car_id INT NOT NULL,
-    car_name VARCHAR(255) NOT NULL,
 
-    full_name VARCHAR(100) NOT NULL,
-    phone VARCHAR(20) NOT NULL,
-
-    test_date DATE NOT NULL,
-    test_time TIME NOT NULL,
-
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
 -- Tạo bảng cars
 CREATE TABLE IF NOT EXISTS cars (
     id INT AUTO_INCREMENT PRIMARY KEY,
     brand VARCHAR(50) NOT NULL,
     model VARCHAR(100) NOT NULL,
     year INT NOT NULL,
-    miliage INT NOT NULL,
+    mileage INT NOT NULL,
     price BIGINT NOT NULL,
     location VARCHAR(100) NOT NULL,
     description TEXT,
@@ -83,3 +70,38 @@ VALUES (5, 7, '5155 x 1995 x 1775 mm', 'Mâm 19 inch đa chấu', 2200, 180, '2.
 INSERT INTO car_specs (car_id, seat_count, dimensions, wheel_type, weight, ground_clearance, engine, fuel_type)
 VALUES (6, 5, '4820 x 1900 x 1450 mm', 'Mâm 19 inch thể thao', 1650, 145, '2.0L TwinPower Turbo hoặc hybrid', 'Xăng / Hybrid');
 
+-- tạo bảng đăng ký lái thử
+CREATE TABLE test_drive_registration (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    car_id INT NOT NULL,
+    car_name VARCHAR(255) NOT NULL,
+
+    full_name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+
+    test_date DATE NOT NULL,
+    test_time TIME NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+--Tạo bảng User phục vụ login
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    phoneNumber VARCHAR(20) NOT NULL,
+    role VARCHAR(20) DEFAULT 'user'
+);
+
+----Tạo bảng User phục vụ cho login/User profile
+--CREATE TABLE users (
+--  id INT PRIMARY KEY AUTO_INCREMENT,
+--  username VARCHAR(50) NOT NULL,
+--  password VARCHAR(100) NOT NULL,
+--  email VARCHAR(100),
+--  balance INT DEFAULT 0,
+--  expiry DATE,
+--  role VARCHAR(20)
+--);

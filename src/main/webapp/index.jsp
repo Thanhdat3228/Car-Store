@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <c:if test="${empty carList}">
-    <jsp:forward page="HomeServlet" />
+	<jsp:forward page="HomeServlet" />
 </c:if>
 
 
@@ -40,6 +40,8 @@
 				<button class="btn btn-ghost">Hà Nội</button>
 			</div>
 		</div>
+
+
 	</header>
 
 	<!-- Hero + Search -->
@@ -63,6 +65,8 @@
 			</div>
 		</div>
 	</section>
+
+
 
 	<!-- Main content -->
 	<main class="container main-grid" id="buy">
@@ -106,7 +110,7 @@
 			<div class="listings-header">
 				<div>
 					<h2>Kết quả tìm kiếm</h2>
-					<p class="muted">${fn:length(carList)} xe tìm thấy</p>
+					<p class="muted">${fn:length(carList)}xetìm thấy</p>
 				</div>
 
 				<form action="SortServlet" method="get">
@@ -147,8 +151,8 @@
 								<button class="fav" aria-label="Yêu thích">♥</button>
 							</div>
 							<div class="card-body">
-								<h4>${car.brand} ${car.model}</h4>
-								<p class="muted">${car.year} • ${car.mileage}km</p>
+								<h4>${car.brand}${car.model}</h4>
+								<p class="muted">${car.year}•${car.mileage}km</p>
 								<div class="card-footer">
 									<div class="price">
 										<fmt:formatNumber value="${car.price}" type="number"
