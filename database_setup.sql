@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS cars (
 );
 
 -- Chèn dữ liệu mẫu (tùy chọn)
-INSERT INTO cars (brand, model, year, km, price, location, description, image) VALUES
+INSERT INTO cars (brand, model, year, mileage, price, location, description, image) VALUES
 ('Toyota', 'Camry 2.5Q', 2020, 45000, 850000000, 'Hà Nội', 'Xe nhập khẩu nguyên chiếc, bảo dưỡng định kỳ đầy đủ. Nội thất sang trọng, tiết kiệm nhiên liệu.', 'image/toyota-cambry.jpg'),
 ('Honda', 'Civic RS', 2019, 60000, 720000000, 'TP. Hồ Chí Minh', 'Xe thể thao, động cơ mạnh mẽ, phù hợp cho giới trẻ yêu thích tốc độ.', 'image/honda-civic.jpg'),
 ('Mazda', 'Mazda 3', 2021, 30000, 450000000, 'Đà Nẵng', 'Thiết kế hiện đại, công nghệ tiên tiến, an toàn cao.', 'image/mazda-3.jpg'),
@@ -31,7 +31,7 @@ INSERT INTO cars (brand, model, year, km, price, location, description, image) V
 ('BMW', 'BMW 2025', 2025, 90000, 1330000000, 'Hà Nội', 'Xe cao cấp, công nghệ hiện đại nhất.', 'image/BMW.jpg');
 
 
---Tạo bảng carSpecs(thông số kỹ thuật xe)
+-- Tạo bảng carSpecs(thông số kỹ thuật xe)
 	CREATE TABLE car_specs (
     id INT AUTO_INCREMENT PRIMARY KEY,
     car_id INT NOT NULL, -- liên kết với bảng cars
@@ -45,7 +45,7 @@ INSERT INTO cars (brand, model, year, km, price, location, description, image) V
     FOREIGN KEY (car_id) REFERENCES cars(id) ON DELETE CASCADE
 );
 
---chèn dữ liệu mẫu vào
+-- chèn dữ liệu mẫu vào
 -- Toyota Camry 2.5Q (2020)
 INSERT INTO car_specs (car_id, seat_count, dimensions, wheel_type, weight, ground_clearance, engine, fuel_type)
 VALUES (1, 5, '4885 x 1840 x 1445 mm', 'Mâm 18 inch hợp kim', 1515, 140, '2.5L I4 DOHC Dual VVT-i', 'Xăng');
@@ -86,7 +86,7 @@ CREATE TABLE test_drive_registration (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
---Tạo bảng User phục vụ login
+-- Tạo bảng User phục vụ login
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -94,14 +94,3 @@ CREATE TABLE users (
     phoneNumber VARCHAR(20) NOT NULL,
     role VARCHAR(20) DEFAULT 'user'
 );
-
-----Tạo bảng User phục vụ cho login/User profile
---CREATE TABLE users (
---  id INT PRIMARY KEY AUTO_INCREMENT,
---  username VARCHAR(50) NOT NULL,
---  password VARCHAR(100) NOT NULL,
---  email VARCHAR(100),
---  balance INT DEFAULT 0,
---  expiry DATE,
---  role VARCHAR(20)
---);

@@ -54,4 +54,11 @@ CREATE TABLE car_specs (
     FOREIGN KEY (car_id) REFERENCES cars(id) ON DELETE CASCADE
 );
 
-
+## cấu trúc bảng User phục vụ filter
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,--id
+    username VARCHAR(50) NOT NULL UNIQUE,--tên đăng nhập
+    password VARCHAR(100) NOT NULL,--password
+    phoneNumber VARCHAR(20) NOT NULL,--số điện thoại
+    role VARCHAR(20) DEFAULT 'user'--vai trò user hay admin
+);
