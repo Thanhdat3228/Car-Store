@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Đăng bán thành công</title>
+<link rel="stylesheet" href="css/AccessDeniedStyle.css"/>
 </head>
 <body>
-<h2>Thành công</h2>
-<a href="index.jsp">Về trang chủ</a>
+<h2 class="success">Đăng ký thành công</h2>
+<a href="index.jsp" class="back-home">Về trang chủ</a>
 </body>
 </html>

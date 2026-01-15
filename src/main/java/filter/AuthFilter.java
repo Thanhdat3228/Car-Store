@@ -28,7 +28,7 @@ public class AuthFilter implements Filter {
 			chain.doFilter(request, response); // Cho phép đi tiếp
 		} else {
 			// Nếu chưa đăng nhập thì chuyển hướng về login.jsp
-			res.sendRedirect(req.getContextPath() + "/login.jsp");
+			res.sendRedirect(req.getContextPath() + "/requireLogin.jsp");
 		}
 	}
 

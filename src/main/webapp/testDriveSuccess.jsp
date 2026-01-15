@@ -16,7 +16,7 @@
 	</p>
 
 	<div class="form-actions" style="justify-content:center; text-decoration: none">
-		<a href="home.jsp" class="btn-primary">Về trang chủ</a>
+		<a href="home.jsp" class="btn-primary" style="text-decoration: none">Về trang chủ</a>
 	</div>
 </div>
 

@@ -1,5 +1,5 @@
 
-.access-denied {
+.req-login {
 	color: #b30000;
 	font-family: Arial, sans-serif;
 	font-size: 20px;
@@ -8,7 +8,7 @@
 	margin-top: 50px;
 }
 /* Class cho link quay lại */
-.back-home {
+.login-now {
 	display:inherit;
 	justify-content: center;
 	text-align: center;
@@ -23,12 +23,4 @@
 
 .back-home:hover {
 	background-color: #005bb5; /* Đậm hơn khi hover */
-}
-.success{
-	color: #b30000;
-	font-family: Arial, sans-serif;
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-	margin-top: 50px;
 }

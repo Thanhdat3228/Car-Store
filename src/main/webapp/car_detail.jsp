@@ -213,7 +213,7 @@ if (specs != null) {
 					<form action="testDrive.jsp" method="get">
 						<input type="hidden" name="carId" value="<%=car.getId()%>">
 						<button type="submit" class="btn btn-primary btn-large">
-							Liên hệ người bán</button>
+							Đăng ký lái thử</button>
 					</form>
 					<button class="btn btn-ghost btn-large">Yêu thích</button>
 				</div>

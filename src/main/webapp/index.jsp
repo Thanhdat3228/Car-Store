@@ -159,7 +159,7 @@
 							</div>
 							<div class="card-body">
 								<h4>${car.brand} ${car.model}</h4>
-								<p class="muted">${car.year}• ${car.mileage}km</p>
+								<p class="muted">${car.year}• ${car.mileage} km</p>
 								<div class="card-footer">
 									<div class="price">
 										<fmt:formatNumber value="${car.price}" type="number"

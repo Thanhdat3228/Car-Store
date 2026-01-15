@@ -37,7 +37,8 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
+        
+        
         try (Connection conn = DBConnection.getConnection()) {
             PreparedStatement ps = conn.prepareStatement(
                 "SELECT * FROM users WHERE username=? AND password=?");
