@@ -4,12 +4,12 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import dao.*;
 
 @WebServlet("/RegisterTestDriveServlet")
 public class RegisterTestDriveServlet extends HttpServlet {
@@ -21,7 +21,7 @@ public class RegisterTestDriveServlet extends HttpServlet {
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/car_store", "root","");
 	}
 
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,6 +33,7 @@ public class RegisterTestDriveServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -41,6 +42,7 @@ public class RegisterTestDriveServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 

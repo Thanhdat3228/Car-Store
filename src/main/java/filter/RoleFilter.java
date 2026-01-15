@@ -21,10 +21,10 @@ public class RoleFilter implements Filter{
 		HttpServletRequest req=(HttpServletRequest) request;
 		HttpServletResponse res=(HttpServletResponse) response;
 		HttpSession session=req.getSession(false);
-		
+
 		String role = (session != null) ? (String) session.getAttribute("role") : null;
 		System.out.println("Role trong session: " + role);
-		
+
 		if("admin".equals(role)) {
 			chain.doFilter(request, response);
 		}else {
@@ -32,6 +32,6 @@ public class RoleFilter implements Filter{
 
 		}
 	}
-	
-	
+
+
 }

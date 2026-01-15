@@ -8,11 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.el.ListELResolver;
-
-import com.mysql.cj.xdevapi.PreparableStatement;
-import com.mysql.cj.xdevapi.Result;
-
 import model.Car;
 
 public class CarDAO {

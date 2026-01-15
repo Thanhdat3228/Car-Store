@@ -36,13 +36,14 @@
 			</div>
 
 			<c:if test="${not empty sessionScope.user}">
-			<div class="user-profile">
-				<span class="greeting" style="color: white">Xin chào, <strong>${sessionScope.user}</strong></span>
-				<a href="LogoutServlet" class="logout-btn" style="color: purple;">Đăng xuất</a>
-			</div>
-		</c:if>
-			
-			
+				<div class="user-profile">
+					<span class="greeting" style="color: white">Xin chào, <strong>${sessionScope.user}</strong></span>
+					<a href="LogoutServlet" class="logout-btn"
+						style="color: purple; text-decoration: none">[Đăng xuất]</a>
+				</div>
+			</c:if>
+
+
 		</div>
 
 
@@ -116,7 +117,7 @@
 			<div class="listings-header">
 				<div>
 					<h2>Kết quả tìm kiếm</h2>
-					<p class="muted">${fn:length(carList)}xetìmthấy</p>
+					<p class="muted">${fn:length(carList)} xe tìm thấy</p>
 				</div>
 
 				<form action="SortServlet" method="get">
@@ -157,8 +158,8 @@
 								<button class="fav" aria-label="Yêu thích">♥</button>
 							</div>
 							<div class="card-body">
-								<h4>${car.brand}${car.model}</h4>
-								<p class="muted">${car.year}•${car.mileage}km</p>
+								<h4>${car.brand} ${car.model}</h4>
+								<p class="muted">${car.year}• ${car.mileage}km</p>
 								<div class="card-footer">
 									<div class="price">
 										<fmt:formatNumber value="${car.price}" type="number"

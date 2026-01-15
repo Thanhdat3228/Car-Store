@@ -22,7 +22,7 @@ public class AuthFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 		HttpSession session = req.getSession(false);
-		
+
 		// Kiểm tra xem đã đăng nhập chưa
 		if (session != null && session.getAttribute("user") != null) {
 			chain.doFilter(request, response); // Cho phép đi tiếp
