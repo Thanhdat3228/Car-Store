@@ -35,11 +35,17 @@
 				</nav>
 			</div>
 
-			<div class="header-actions">
-				<button class="btn btn-primary">Tìm xe</button>
-				<button class="btn btn-ghost">Hà Nội</button>
+			<c:if test="${not empty sessionScope.user}">
+			<div class="user-profile">
+				<span class="greeting" style="color: white">Xin chào, <strong>${sessionScope.user}</strong></span>
+				<a href="LogoutServlet" class="logout-btn" style="color: purple;">Đăng xuất</a>
 			</div>
+		</c:if>
+			
+			
 		</div>
+
+
 
 
 	</header>
@@ -110,7 +116,7 @@
 			<div class="listings-header">
 				<div>
 					<h2>Kết quả tìm kiếm</h2>
-					<p class="muted">${fn:length(carList)}xetìm thấy</p>
+					<p class="muted">${fn:length(carList)}xetìmthấy</p>
 				</div>
 
 				<form action="SortServlet" method="get">
